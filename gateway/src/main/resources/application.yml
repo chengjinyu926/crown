@@ -1,0 +1,32 @@
+server:
+  port: 80
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: account
+          uri: lb://account
+          predicates:
+            - Path=/account/**
+        - id: issue
+          uri: lb://issue
+          predicates:
+            - Path=/issue/**
+        - id: message
+          uri: lb://message
+          predicates:
+            - Path=/message/**
+#        - id: sms
+#          uri: lb://sms
+#          filters:
+#            - AddRequestHeader=Access-Control-Allow-Origin, *
+#          predicates:
+#            - Path=/sms/**
+    nacos:
+      discovery:
+        server-addr: 192.168.17.131:2001

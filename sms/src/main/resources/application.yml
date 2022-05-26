@@ -1,0 +1,16 @@
+server:
+  port: 8001
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.17.131:2001
+  application:
+    name: sms
+  redis:
+    host: 192.168.17.131
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

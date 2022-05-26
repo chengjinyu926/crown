@@ -1,0 +1,19 @@
+server:
+  port: 9008
+spring:
+  application:
+    name: message
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://192.168.17.131:3306/crown?useUnicode=true&characterEncoding=UTF-8
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.17.131:2001
+  redis:
+    host: 192.168.17.131
+  rabbitmq:
+    host: 192.168.17.131
+  jpa:
+    show-sql: false

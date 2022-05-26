@@ -1,0 +1,14 @@
+server:
+  port: 8002
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.17.131:2001
+  application:
+    name: sms
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
